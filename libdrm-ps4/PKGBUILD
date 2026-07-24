@@ -23,7 +23,7 @@ source=('libdrm::git+https://gitlab.freedesktop.org/mesa/drm.git'
         'ps4-libdrm.patch')
 sha512sums=('SKIP'
             'b0ca349b882a4326b19f81f22804fabdb6fb7aef31cdc7b16b0a7ae191bfbb50c7daddb2fc4e6c33f1136af06d060a273de36f6f3412ea326f16fa4309fda660'
-            '8e03fbb4d44bee75ca21bb2dd01bcd818bea133cce0482a213e28eb2e1ab9a5171696d5255928f180619555cb4a16bb9d0224e42a23e8bfbb6a8c240b668e59d')
+            '6574020cd8f0bf50869b9418874a2558a2dd5355c396a7cb8cb804367be9fcc0edebdd455459c5109cdd77063a17ab18a5e7123e9751c2f8bd4dab3b08b210a8')
 
 pkgver() {
     cd $_realname

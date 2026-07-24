@@ -20,7 +20,7 @@ groups=('xorg-drivers-git')
 source=("${pkgname}::git+https://gitlab.freedesktop.org/xorg/driver/xf86-video-amdgpu.git"
         'ps4-xf86-video-amdgpu.patch')
 sha256sums=('SKIP'
-            '17f0504fc662a39d48b9bf33fe389472ce369442813d466430a5c54bbfb851e0')
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
 
 pkgver() {
   cd ${pkgname}

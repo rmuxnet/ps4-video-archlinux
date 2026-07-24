@@ -85,11 +85,11 @@ source=('mesa::git+https://gitlab.freedesktop.org/mesa/mesa.git#branch=26.0'
 sha256sums=('SKIP'
             '7fdc119cf53c8ca65396ea73f6d10af641ba41ea1dd2bd44a824726e01c8b3f2'
             '3ea259740141b862e152e07c58f05cad539680541dc181a7233be0c93414e6fb'
-            'caedb1e86c2ed10097c424b61acda722b36dfc434909d8b312c75cc614407d8c')
+            '8339fc650750f7b23fba3a2bf0c845238c2162e2b2cdada4643480a8c0a91f8f')
 b2sums=('SKIP'
         'cc60238726b35133b5b729fb4ed1e76e04136588533615d84b4a54656d5b41727d5e7ff06ef4de3eb102eed6669d6c5c5cb8ac9fbdf6fc25aa477877c5c3ba87'
         'f84a2ec7aa5cd0e3efcfee69897e3da5c6c7031a07b7c93b43f1a709cc0ae0fd312c56c659e7cb7f2e276cbe49be6e586f117320404d2978b09ae0969d919eaf'
-        '5d8221829bf3e3e0d54d1a8207cec009ac57e3e7b9ad72cbca3a41d04669fa7cda7258c8c0edea691b739c179fc14cd6eed5cacd86d3770093e2ecaf9956150b')
+        '4421ea9cc1f5fa4711e9b446a34a90f17fc28aba2bb232c11a479c24159f998638e58bef663ceb2899a0b58a4ec1d16b96dcdfe1e7a658726721d8c09980be32')
 
 # NINJAFLAGS is an env var used to pass commandline options to ninja
 # NOTE: It's your responbility to validate the value of $NINJAFLAGS. If unsure, don't set it.
