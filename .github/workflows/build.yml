@@ -109,21 +109,34 @@ jobs:
           cd "$GITHUB_WORKSPACE/$REPO_DIR"
           repo-add ps4-video.db.tar.zst *.pkg.tar.zst
 
-      - name: Commit artifacts
-        working-directory: ${{ github.workspace }}
-        run: |
-          set -euxo pipefail
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: ps4-video-packages
+          path: ${{ github.workspace }}/${{ env.REPO_DIR }}/*
+          retention-days: 14
 
-          cd "$GITHUB_WORKSPACE"/"$REPO_DIR"/
+  release:
+    needs: build
+    if: always() && needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ps4-video-packages
+          path: dist
 
-          pwd
-          ls -la
-          ls -la "$GITHUB_WORKSPACE"
-          ls -la "$GITHUB_WORKSPACE/.git" || true
-      
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          
-          git add *
-          git commit -m "Update Mesa + drivers $(date +'%Y-%m-%d %H:%M')" || echo "No changes"
-          git push
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: "PS4 video packages build ${{ github.run_number }}"
+          draft: true
+          make_latest: false
+          body: |
+            Automated build of the PS4 mesa/libdrm/xf86-video-amdgpu packages, plus the pacman repo db.
+          files: |
+            dist/*
